@@ -19,7 +19,7 @@ let seattle = {
   }, 
 
   }
-
+//test 2
   for(let i = 0; i < seattle.Hours.length; i++){
         let randCookies = Math.floor(seattle.hourlyCookies());
         seattle.avgCookiesSoldEachHourArray.push(randCookies);
