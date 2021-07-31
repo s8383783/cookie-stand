@@ -31,7 +31,7 @@ let seattle = {
       this.dailyTotal = this.dailyTotal + randCookies}
   
 
-        // renders list to the page
+        // renders list to the page po
 
 const bodyElem = document.getElementById('bodyElem')
 let ulElem = document.createElement('ul');
