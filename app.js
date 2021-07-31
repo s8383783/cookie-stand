@@ -3,6 +3,7 @@
 console.log('Hi world');
 
 // Store Object
+
 let seattle = {
     name: 'Seattle',
     min: 23,
@@ -11,19 +12,26 @@ let seattle = {
     avgCookiesSoldEachHourArray: [],
     Hours: ['6 am ', '7 am ', '8 am ', '9 am ', '10 am ', '11 am ', '12 pm ', '1 pm ', '2 pm ', '3 pm ', '4 pm ', '5 pm'],
     dailyTotal: 0,
+    // Get a random number 
     getRandomCustomer: function() {
       return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
     },
+    // Calculate cookies for each hour of the day by multiplying randomcustomer by the avg. 
  hourlyCookies: function(){
       return this.getRandomCustomer() * this.avg 
   }, 
+}
 
-  }
-
+// Loop through hours array, push answers from hourlyCookies function to the avgCookiesSoldEachHour array
   for(let i = 0; i < seattle.Hours.length; i++){
         let randCookies = Math.floor(seattle.hourlyCookies());
         seattle.avgCookiesSoldEachHourArray.push(randCookies);
-        console.log (seattle.Hours[i], randCookies);}
+        console.log (seattle.Hours[i], randCookies);
+        // add total
+      this.dailyTotal = this.dailyTotal + randCookies}
+  
+
+        // renders list to the page po
 
 const bodyElem = document.getElementById('bodyElem')
 let ulElem = document.createElement('ul');
@@ -33,8 +41,9 @@ for( let i = 0; i < seattle.Hours.length; i++){
     liElem.textContent = `${seattle.Hours[i]}: ${seattle.avgCookiesSoldEachHourArray[i]}`;
     ulElem.appendChild(liElem);
 }
-
+//append total to the unordered list 
 div1.appendChild(ulElem)
+
 
 let tokyo = {
   name: 'Tokyo',
