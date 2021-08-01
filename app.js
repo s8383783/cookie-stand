@@ -13,7 +13,7 @@ function Store(name, min, max, avg) {
   this.min = min;
   this.max = max;
   this.avg = avg;
-  this.hours = ['6 am ', '7 am ', '8 am ', '9 am ', '10 am ', '11 am ', '12 pm ', '1 pm ', '2 pm ', '3 pm ', '4 pm ', '5 pm'];
+  this.hours = ['6 am ', '7 am ', '8 am ', '9 am ', '10 am ', '11 am ', '12 pm ', '1 pm ', '2 pm ', '3 pm ', '4 pm ', '5 pm',];
   this.dailyTotal = 0;
   this.hourlyCookies = [];
   storeArray.push(this)
@@ -84,42 +84,57 @@ Store.prototype.render = function() {
     ul.appendChild(li);
   };
 }
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
+// seattle.render();
+// tokyo.render();
+// dubai.render();
+// paris.render();
+// lima.render();
 // .
 const salesTable = document.querySelector('tbody');
 
 Store.prototype.renderTable = function() {
 
-  let tr = document.createElement('tr');
-  salesTable.appendChild(tr);
+  let trName = document.createElement('tr');
+  salesTable.appendChild(trName);
+  let tdName = document.createElement('td')
+  tdName.textContent = this.name;
+  trName.appendChild(tdName);
 
+  // let tr2 = document.createElement('tr');
+  //  salesTable.appendChild(tr2);
+  //  
+  //  this.textContent = this.name;
+   
 
-  let tr2 = document.createElement('tr');
-   salesTable.appendChild(tr2);
-   let td = document.createElement('td')
-   this.textContent = this.name;
-   tr.appendChild(td);
+  // //  let tr3 = document.createElement('tr');
 
   for(let i=0; i < this.hours.length; i++) {
     let tdCookies = document.createElement('td');
     tdCookies.textContent = this.hourlyCookies[i];
-    tr2.appendChild(tdCookies);
+    trName.appendChild(tdCookies)
+    }
+    let tdCookiesTotals = document.createElement('td');
+    tdCookiesTotals.textContent = this.dailyTotal;
+    let tr3 = document.createElement('tr')
+    trName.appendChild(tdCookiesTotals);
 
-  }
 }
+
+
+
+
 
   Store.prototype.renderHours = function() {
     let tr = document.createElement('tr');
   salesTable.appendChild(tr);
-  for(let i=0; i < this.hours.length; i++) {
+  for(let i =-1 ; i < this.hours.length; i++) {
       let tdHours = document.createElement('td');
       tdHours.textContent = this.hours[i];
       tr.appendChild(tdHours);
     }
+    let trTotal = document.createElement('tr');
+    trTotal.textContent = 'Total';
+    tr.appendChild(trTotal);
 
   }
 
@@ -127,6 +142,10 @@ Store.prototype.renderTable = function() {
 seattle.renderHours(); 
   seattle.renderTable();
   tokyo.renderTable();
+  dubai.renderTable();
+  paris.renderTable();
+  lima.renderTable();
+
 
   // for (let i = 0; i < this.like.length; i++) {
   //   let td = document.createElement('td');
