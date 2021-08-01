@@ -89,7 +89,7 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-
+// .
 const salesTable = document.querySelector('tbody');
 
 Store.prototype.renderTable = function() {
