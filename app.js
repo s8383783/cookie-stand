@@ -6,6 +6,7 @@ console.log('Hi world');
 
 // make Store CONSTRUCTOR to be used for each store, include all information that will be on all store objects
 // What to expect when arugments are put in
+
 let storeArray= [];
 
 function Store(name, min, max, avg) {
@@ -18,19 +19,12 @@ function Store(name, min, max, avg) {
   this.hourlyCookies = [];
   storeArray.push(this)
 };
-
-  
-  // Add functions that were in the prior object by the format lines 25-28
-
-  // getRandomCustomer: function() {
-  //   return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  // };
-
+// Add functions that were in the prior object by the format lines 25-28
   Store.prototype.getHourlycookies = function() {
   for (let i=0; i < this.hours.length; i++) {
     let Randcookies = (Math.round(Math.random() * (this.max - this.min + 1) + this.min) * this.avg);
     Randcookies = (Math.round(Randcookies));
-    console.log(Randcookies)
+    // console.log(Randcookies)
     this.hourlyCookies.push(Randcookies);
 }
 }
@@ -64,15 +58,14 @@ paris.getDailytotal();
 lima.getHourlycookies();
 lima.getDailytotal();
 
-console.log(seattle)
-console.log(tokyo)
-console.log(dubai)
-console.log(paris)
-console.log(lima)
+// console.log(seattle)
+// console.log(tokyo)
+// console.log(dubai)
+// console.log(paris)
+// console.log(lima)
 
 Store.prototype.render = function() {
-
-  const salesContainer = document.getElementById('Sales');
+ const salesContainer = document.getElementById('Sales');
   let h2 = document.createElement('h2');
   h2.textContent = this.name;
   salesContainer.appendChild(h2);
@@ -84,29 +77,14 @@ Store.prototype.render = function() {
     ul.appendChild(li);
   };
 }
-// seattle.render();
-// tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();
-// .
 const salesTable = document.querySelector('tbody');
 
 Store.prototype.renderTable = function() {
-
   let trName = document.createElement('tr');
   salesTable.appendChild(trName);
   let tdName = document.createElement('td')
   tdName.textContent = this.name;
   trName.appendChild(tdName);
-
-  // let tr2 = document.createElement('tr');
-  //  salesTable.appendChild(tr2);
-  //  
-  //  this.textContent = this.name;
-   
-
-  // //  let tr3 = document.createElement('tr');
 
   for(let i=0; i < this.hours.length; i++) {
     let tdCookies = document.createElement('td');
@@ -115,16 +93,11 @@ Store.prototype.renderTable = function() {
     }
     let tdCookiesTotals = document.createElement('td');
     tdCookiesTotals.textContent = this.dailyTotal;
-    let tr3 = document.createElement('tr')
     trName.appendChild(tdCookiesTotals);
 
-}
+};
 
-
-
-
-
-  Store.prototype.renderHours = function() {
+ Store.prototype.renderHours = function() {
     let tr = document.createElement('tr');
   salesTable.appendChild(tr);
   for(let i =-1 ; i < this.hours.length; i++) {
@@ -136,15 +109,74 @@ Store.prototype.renderTable = function() {
     trTotal.textContent = 'Total';
     tr.appendChild(trTotal);
 
-  }
+  };
+
+ function getTotal() {
+  // let tfooter = document.createElement('tfoot');
+  // salesTable.appendChild(tfooter)
+  // let tRow = document.createElement('tr')
+  // tfooter.appendChild(tRow)
+  let trTotal = document.createElement('tr');
+  salesTable.appendChild(trTotal);
+  let td = document.createElement ('td');
+      td.textContent = ' Hourly Total';
+     trTotal.appendChild(td);
+  
+
+    for (let i = 0; i < seattle.hours.length; i++) {
+      let total = 0;
+      for (let j = 0; j < storeArray.length; j++) {
+      total += storeArray[j].hourlyCookies[i];
+  
+      }
+      let trTotaldata = document.createElement('td');
+      trTotaldata.textContent = total;
+      trTotal.appendChild(trTotaldata);}}
+    
 
 
-seattle.renderHours(); 
+
+
+  seattle.renderHours(); 
   seattle.renderTable();
   tokyo.renderTable();
   dubai.renderTable();
   paris.renderTable();
   lima.renderTable();
+  getTotal();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   // for (let i = 0; i < this.like.length; i++) {
@@ -325,9 +357,3 @@ seattle.renderHours();
 // }
 // div5.appendChild(ulElemLima)
 
-
-
-
-
-
-    
