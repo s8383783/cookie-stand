@@ -1,5 +1,6 @@
 body {
-    background-image: url('../images/fish.jpg');
+    background: rgba(206, 152, 152, 0.955);
+    background-image: url('../images/fish.jpg') ;
 
 }
 
@@ -24,7 +25,6 @@ h1{
        text-align: center;
        
    }
-
  #navbar {
      background-color: #8EA604;
      border: white dotted .3px;
