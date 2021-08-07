@@ -1,0 +1,51 @@
+body {
+    background-image: url('../images/fish.jpg');
+
+}
+
+#backstory p {
+    
+    padding: 200px; 
+    background-color:#EC9F05;
+    width: 60%; 
+    border:black solid 2px;
+    border-radius: 15px ;
+    min-width: none;}
+#mainheader {
+    background-color: #EC9F05;
+    color: #BF3100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 90px;
+    width: 100%;
+    border-radius: 15px;
+    }
+h1{
+       margin-left: 50px;
+       text-align: center;
+       
+   }
+
+ #navbar {
+     background-color: #8EA604;
+     border: white dotted .3px;
+     border-radius: 15px ;
+     margin-top: 10px;}  
+ #navbar ul {
+     padding: 0; 
+     list-style: none;
+ }
+#navbar li {
+    display: inline;
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+#smilingfamily{
+    position: relative;
+    float: left;
+    border: black solid 3px;
+    border-radius: 16px;
+    height:200px;
+ margin-top: -180px;
+ margin-left: -180px;
+}
