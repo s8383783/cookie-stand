@@ -19,6 +19,32 @@
     </table>
     <h1></h1>
 
+    <section>
+        <div id = "stores"> 
+        <h2>Sales Data by Location</h2>
+    </div>
+
+        <form id="addAStoreForm">
+          <fieldset>
+            <legend>Add a Store</legend>
+            <label for = "Location" >Location: <input type = "text" name = "name"></label> 
+
+             <br><br>
+
+            <label for="Minimum Customers">Minimum Customers per Hour: <input type="number"  name = "minimum"></label>
+             <br><br>
+
+            <label for="Maximum Customers">Maximum Customers per Hour: <input type="number" id = "maximum" name = "maximum"></label> 
+            
+            <br><br>
+
+            <label for="Average Customers">Average Customers per Hour: <input type="text" step = "0.1" id = "average" name = "average"></label> 
+            <br><br>
+          </fieldset>
+          <button type="submit">Add Store</button>
+        </form>
+      </section>
+
     <script src="./app.js" text="text/javascript" ></script> 
 </body>
 </html>

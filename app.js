@@ -145,6 +145,24 @@ Store.prototype.renderTable = function() {
   lima.renderTable();
   getTotal();
 
+  let myForm = document.querySelector('form')
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let storeName = event.target.name.value;
+    let minimum = parseInt(event.target.minimum.value);
+  let maximum = parseInt(event.target.maximum.value);
+  let average = parseInt(event.target.average.value);
+
+  let AddedShop = new Store(storeName, minimum, maximum, average);
+
+  getTotal();
+  seattle.hours();
+  AddedShop.renderTable();
+  
+}
+myForm.addEventListener('submit', handleSubmit);
+  
 
 
 

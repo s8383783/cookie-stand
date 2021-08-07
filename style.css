@@ -85,6 +85,9 @@ section ul {
 #cutter{
     height: 250px;
 }
+#addAStoreForm{
+    background-color: #fff;
+}
 
 
 table, th, td {
