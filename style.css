@@ -1,17 +1,33 @@
 body {
-    background: rgba(206, 152, 152, 0.955);
     background-image: url('../images/fish.jpg') ;
-
 }
 
-#backstory p {
-    
-    padding: 200px; 
-    background-color:#EC9F05;
-    width: 60%; 
-    border:black solid 2px;
-    border-radius: 15px ;
-    min-width: none;}
+h1{
+    margin-left: 50px;
+    text-align: center;
+}
+#cookie{
+    height: 80px;
+    border-radius: 15px;
+    margin-top: -60px;
+    margin-left: 160px;
+}
+#navbar {
+  background-color: #8EA604;
+  border: white dotted .3px;
+  border-radius: 15px ;
+  margin-top: 10px;
+margin-bottom: 150px;}  
+#navbar ul {
+  padding: 0; 
+  list-style: none;
+}
+#navbar li {
+ display: inline;
+ padding: 15px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: large;
+}
 #mainheader {
     background-color: #EC9F05;
     color: #BF3100;
@@ -20,32 +36,59 @@ body {
     width: 100%;
     border-radius: 15px;
     }
-h1{
-       margin-left: 50px;
-       text-align: center;
-       
-   }
- #navbar {
-     background-color: #8EA604;
-     border: white dotted .3px;
-     border-radius: 15px ;
-     margin-top: 10px;}  
- #navbar ul {
-     padding: 0; 
-     list-style: none;
- }
-#navbar li {
-    display: inline;
-    padding: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-}
 #smilingfamily{
     position: relative;
     float: left;
-    border: black solid 3px;
+    border:rgb(78, 50, 50) solid 1px;
     border-radius: 16px;
     height:200px;
- margin-top: -180px;
- margin-left: -180px;
+ margin-top: 10px;
+ margin-left: 30px;
+ margin-right: 20px;
+}
+section p {
+    padding: 100px; 
+    background-color:#EC9F05;
+    width: 90%; 
+    border:black solid 1px;
+    border-radius: 15px ;
+    padding-left: 20px;
+    text-emphasis:initial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+section ul {
+    padding: 100px; 
+    background-color:#EC9F05;
+    width: 90%; 
+    border:black solid 1px;
+    border-radius: 15px ;
+    padding-left: 20px;
+    text-emphasis:initial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+}
+
+#store{
+    padding: 100px; 
+    background-color:#EC9F05;
+    width: 90%; 
+    border:black solid 1px;
+    border-radius: 15px ;
+    padding-left: 20px;
+    text-emphasis:initial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#shirt {
+    height: 250px;
+}
+#cutter{
+    height: 250px;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    background-color: #fff;
+
 }
