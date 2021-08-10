@@ -1,10 +1,8 @@
 'use strict'
 
-// Store Object
-
-// make Store CONSTRUCTOR to be used for each store, include all information that will be on all store objects
-// What to expect when arugments are put in
 let storeArray = [];
+let grandTotal = 0;
+
 
 function Store(name, min, max, avg) {
   this.name = name;
@@ -15,8 +13,10 @@ function Store(name, min, max, avg) {
   this.dailyTotal = 0;
   this.hourlyCookies = [];
   storeArray.push(this)
+
+  this.grandTotal
 };
-// Add functions that were in the prior object by the format lines 25-28
+
 Store.prototype.getHourlycookies = function () {
   for (let i = 0; i < this.hours.length; i++) {
     let Randcookies = (Math.round(Math.random() * (this.max - this.min + 1) + this.min) * this.avg);
@@ -28,9 +28,10 @@ Store.prototype.getDailytotal = function () {
   for (let i = 0; i < this.hours.length; i++) {
     this.dailyTotal += this.hourlyCookies[i]
   }
+  grandTotal += this.dailyTotal;
+  console.log(grandTotal);
 };
 
-// adding stores and their specific information to the constructor
 
 let seattle = new Store('Seattle', 23, 65, 6.5);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
@@ -79,7 +80,7 @@ Store.prototype.renderTable = function () {
 
 };
 
- Store.prototype.renderHours = function () {
+Store.prototype.renderHours = function () {
 
   salesTable.appendChild(thead);
   let tr = document.createElement('tr');
@@ -107,12 +108,17 @@ function hourlygetTotal() {
     let total = 0;
     for (let j = 0; j < storeArray.length; j++) {
       total += storeArray[j].hourlyCookies[i];
-
     }
+
     let trTotaldata = document.createElement('td');
     trTotaldata.textContent = total;
     trTotal.appendChild(trTotaldata);
+
   }
+  let tdGrandTotal = document.createElement('td')
+  tdGrandTotal.textContent = grandTotal;
+  trTotal.appendChild(tdGrandTotal);
+
 }
 
 
@@ -149,12 +155,6 @@ function handleSubmit(event) {
 
 myForm.addEventListener('submit', handleSubmit);
 
-
-// // clear it out - myForm.(innerHTML)textContent = "";
-//   // seattle.renderHours;
-//   // allshops (get daily cookies and render salesTable)
-//   // get and render new shop stuff
-//   //   add footer with totals
 
 
 
